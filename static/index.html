@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactless Access Control</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; flex-wrap:wrap; gap:12px;">
+      <div style="text-align:left;">
+        <h1>Contactless Access Control</h1>
+        <p>Multi-Modal Identity Verification &bull; Face + Proximity + Acoustic Fusion</p>
+      </div>
+      <div>
+        <a href="/admin" style="display:inline-flex; align-items:center; gap:6px; padding:10px 18px; border-radius:8px; border:1px solid #e2e8f0; background:#f8fafc; color:#0f172a; text-decoration:none; font-weight:600; font-size:0.86rem;">
+          🛡️ Admin Dashboard
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Action Buttons -->
+    <div class="control-area">
+      <div class="button-row">
+        <button id="btn-recognize" class="btn-recognize" onclick="startRecognition()">
+          <span id="btn-icon">📷</span>
+          <span id="btn-text">Recognize Face</span>
+        </button>
+
+        <button id="btn-stop" class="btn-stop" onclick="stopRecognition()">
+          <span>⏹️</span>
+          <span>Stop Recognition</span>
+        </button>
+      </div>
+
+      <!-- Status Result -->
+      <div id="status-banner" class="status-banner">
+        Click "Recognize Face" to start verification
+      </div>
+    </div>
+
+    <!-- 3 Feeds Grid -->
+    <main class="feeds-grid">
+
+      <!-- 1. VISION FEED -->
+      <section class="feed-card">
+        <div class="feed-header">
+          <div class="feed-title">
+            <span>📷</span>
+            <span>Vision Feed</span>
+          </div>
+          <span id="vision-badge" class="feed-badge">Standby</span>
+        </div>
+        <div class="feed-body">
+          <div class="camera-box" id="camera-box">
+            <!-- Video feed (activates upon button click) -->
+            <video id="camera-video" autoplay playsinline muted></video>
+            <img id="camera-stream" src="" alt="Stream" style="display:none; width:100%; height:100%; object-fit:cover;">
+
+            <!-- Standby Placeholder -->
+            <div id="camera-placeholder" class="camera-placeholder">
+              <span class="camera-placeholder-icon">📷</span>
+              Camera Standby<br>
+              <small>Click "Recognize Face" above</small>
+            </div>
+
+            <!-- Face Bounding Box Overlay -->
+            <div id="face-box" class="face-overlay-box">
+              <span id="face-tag" class="face-overlay-tag">Detecting...</span>
+            </div>
+          </div>
+
+          <div class="metric-group">
+            <div class="metric-item">
+              <span class="metric-label">Subject:</span>
+              <span id="vis-user-name" class="metric-val">—</span>
+            </div>
+
+            <div>
+              <div class="metric-item">
+                <span class="metric-label">Database Match:</span>
+                <span id="vis-match-score" class="metric-val">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="vis-match-bar" class="progress-bar-fill"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="metric-item">
+                <span class="metric-label">Liveness (Anti-Spoof):</span>
+                <span id="vis-liveness-score" class="metric-val">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="vis-liveness-bar" class="progress-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. PROXIMITY FEED -->
+      <section class="feed-card">
+        <div class="feed-header">
+          <div class="feed-title">
+            <span>📶</span>
+            <span>Proximity Feed</span>
+          </div>
+          <span id="prox-badge" class="feed-badge">Standby</span>
+        </div>
+        <div class="feed-body">
+          <div class="proximity-radar-box">
+            <div id="prox-icon" class="radar-signal-icon">📶</div>
+            <div id="prox-rssi" class="radar-rssi-large">-- dBm</div>
+            <div id="prox-subtext" class="radar-subtext">Awaiting device beacon</div>
+          </div>
+
+          <div class="metric-group">
+            <div class="metric-item">
+              <span class="metric-label">Registered Device:</span>
+              <span id="prox-device-name" class="metric-val">—</span>
+            </div>
+
+            <div>
+              <div class="metric-item">
+                <span class="metric-label">Signal Proximity:</span>
+                <span id="prox-signal-score" class="metric-val">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="prox-signal-bar" class="progress-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <span class="metric-label">Estimated Distance:</span>
+              <span id="prox-distance" class="metric-val">—</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ACOUSTIC FEED -->
+      <section class="feed-card">
+        <div class="feed-header">
+          <div class="feed-title">
+            <span>🎤</span>
+            <span>Acoustic Feed</span>
+          </div>
+          <span id="acoustic-badge" class="feed-badge">Standby</span>
+        </div>
+        <div class="feed-body">
+          <div class="audio-visual-box">
+            <canvas id="audio-canvas" width="340" height="140"></canvas>
+          </div>
+
+          <div class="metric-group">
+            <div class="metric-item">
+              <span class="metric-label">Acoustic Token:</span>
+              <span id="acoustic-token-status" class="metric-val">—</span>
+            </div>
+
+            <div>
+              <div class="metric-item">
+                <span class="metric-label">Near-Field Frequency:</span>
+                <span id="acoustic-freq-val" class="metric-val">-- Hz</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="acoustic-freq-bar" class="progress-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <span class="metric-label">Signal-to-Noise (SNR):</span>
+              <span id="acoustic-snr-val" class="metric-val">—</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Test Persona Switcher (For Frontend Testing & Demo) -->
+    <div class="demo-selector">
+      <span>Authorized Database Test Profile:</span>
+      <select id="demo-persona" class="demo-select" onchange="onPersonaChange()">
+        <option value="NORMAL">Dr. Ramesh Kumar (Authorized &bull; In Proximity)</option>
+        <option value="PHOTO_ATTACK">Photo Printout / Screen Replay (Spoof Attack)</option>
+        <option value="WALK_BY">Corridor Walk-by (3.5m Away &bull; Unauthorized)</option>
+        <option value="STOLEN_PHONE">Stolen Phone (Phone Present &bull; Stranger Face)</option>
+      </select>
+    </div>
+
+  </div>
+
+  <script src="/static/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "EVT-395961",
+    "timestamp": "2026-10-10 23:33:15",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.3,
+      "wifi_distance_m": 1.25,
+      "audio_snr": 26.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.25m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-398967",
+    "timestamp": "2026-10-10 23:33:18",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.9,
+      "wifi_distance_m": 1.2,
+      "audio_snr": 22.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.2m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-401968",
+    "timestamp": "2026-10-10 23:33:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.8,
+      "wifi_distance_m": 1.08,
+      "audio_snr": 26.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.08m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-404968",
+    "timestamp": "2026-10-10 23:33:24",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.3,
+      "wifi_distance_m": 1.14,
+      "audio_snr": 25.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.14m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-407962",
+    "timestamp": "2026-10-10 23:33:27",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.8,
+      "wifi_distance_m": 1.08,
+      "audio_snr": 27.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.08m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-410958",
+    "timestamp": "2026-10-10 23:33:30",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.14,
+      "audio_snr": 26.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.14m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-412959",
+    "timestamp": "2026-10-10 23:33:32",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.8,
+      "wifi_distance_m": 1.19,
+      "audio_snr": 22.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.19m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-415967",
+    "timestamp": "2026-10-10 23:33:35",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.0,
+      "wifi_distance_m": 1.21,
+      "audio_snr": 25.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.21m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-418973",
+    "timestamp": "2026-10-10 23:33:38",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.3,
+      "wifi_distance_m": 1.24,
+      "audio_snr": 22.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.24m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-421966",
+    "timestamp": "2026-10-10 23:33:41",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.6,
+      "wifi_distance_m": 1.28,
+      "audio_snr": 26.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.28m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-424955",
+    "timestamp": "2026-10-10 23:33:44",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.1,
+      "wifi_distance_m": 1.11,
+      "audio_snr": 25.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.11m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-426961",
+    "timestamp": "2026-10-10 23:33:46",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.8,
+      "wifi_distance_m": 1.18,
+      "audio_snr": 24.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.18m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-461971",
+    "timestamp": "2026-10-10 23:34:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.9,
+      "wifi_distance_m": 1.09,
+      "audio_snr": 26.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.09m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-521978",
+    "timestamp": "2026-10-10 23:35:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.15,
+      "audio_snr": 26.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.15m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-581963",
+    "timestamp": "2026-10-10 23:36:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.2,
+      "wifi_distance_m": 1.12,
+      "audio_snr": 23.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.12m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-584275",
+    "timestamp": "2026-10-10 23:36:24",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.8,
+      "wifi_distance_m": 1.3,
+      "audio_snr": 28.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.3m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-586673",
+    "timestamp": "2026-10-10 23:36:26",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.8,
+      "wifi_distance_m": 1.3,
+      "audio_snr": 22.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.3m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-589072",
+    "timestamp": "2026-10-10 23:36:29",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.6,
+      "wifi_distance_m": 1.06,
+      "audio_snr": 22.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.06m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-591478",
+    "timestamp": "2026-10-10 23:36:31",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.15,
+      "audio_snr": 23.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.15m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-593872",
+    "timestamp": "2026-10-10 23:36:33",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.15,
+      "audio_snr": 25.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.15m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-596274",
+    "timestamp": "2026-10-10 23:36:36",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.16,
+      "audio_snr": 27.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.16m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-598677",
+    "timestamp": "2026-10-10 23:36:38",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.6,
+      "wifi_distance_m": 1.17,
+      "audio_snr": 25.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.17m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-601077",
+    "timestamp": "2026-10-10 23:36:41",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.6,
+      "wifi_distance_m": 1.28,
+      "audio_snr": 27.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.28m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-603955",
+    "timestamp": "2026-10-10 23:36:43",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.0,
+      "wifi_distance_m": 1.21,
+      "audio_snr": 25.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.21m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-605956",
+    "timestamp": "2026-10-10 23:36:45",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.3,
+      "wifi_distance_m": 1.37,
+      "audio_snr": 28.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.37m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-607966",
+    "timestamp": "2026-10-10 23:36:47",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.6,
+      "wifi_distance_m": 1.16,
+      "audio_snr": 27.1,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.16m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-610965",
+    "timestamp": "2026-10-10 23:36:50",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.2,
+      "wifi_distance_m": 1.36,
+      "audio_snr": 25.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.36m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-613967",
+    "timestamp": "2026-10-10 23:36:53",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.15,
+      "audio_snr": 27.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.15m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-616953",
+    "timestamp": "2026-10-10 23:36:56",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.2,
+      "wifi_distance_m": 1.13,
+      "audio_snr": 27.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.13m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-618953",
+    "timestamp": "2026-10-10 23:36:58",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.0,
+      "wifi_distance_m": 1.21,
+      "audio_snr": 27.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.21m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-620968",
+    "timestamp": "2026-10-10 23:37:00",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.8,
+      "wifi_distance_m": 1.08,
+      "audio_snr": 22.6,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.08m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-623955",
+    "timestamp": "2026-10-10 23:37:03",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.3,
+      "wifi_distance_m": 1.24,
+      "audio_snr": 23.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.24m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-625962",
+    "timestamp": "2026-10-10 23:37:05",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.2,
+      "wifi_distance_m": 1.12,
+      "audio_snr": 23.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.12m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-628073",
+    "timestamp": "2026-10-10 23:37:08",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.7,
+      "wifi_distance_m": 1.07,
+      "audio_snr": 22.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.07m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-630475",
+    "timestamp": "2026-10-10 23:37:10",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.9,
+      "wifi_distance_m": 1.32,
+      "audio_snr": 27.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.32m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-632954",
+    "timestamp": "2026-10-10 23:37:12",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.1,
+      "wifi_distance_m": 1.35,
+      "audio_snr": 26.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.35m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-634957",
+    "timestamp": "2026-10-10 23:37:14",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.0,
+      "wifi_distance_m": 1.1,
+      "audio_snr": 25.6,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.1m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-636957",
+    "timestamp": "2026-10-10 23:37:16",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.1,
+      "wifi_distance_m": 1.23,
+      "audio_snr": 26.8,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.23m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-638966",
+    "timestamp": "2026-10-10 23:37:18",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.7,
+      "wifi_distance_m": 1.18,
+      "audio_snr": 23.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.18m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-641273",
+    "timestamp": "2026-10-10 23:37:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.5,
+      "wifi_distance_m": 1.27,
+      "audio_snr": 23.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.27m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-643672",
+    "timestamp": "2026-10-10 23:37:23",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.1,
+      "wifi_distance_m": 1.34,
+      "audio_snr": 27.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.34m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-646080",
+    "timestamp": "2026-10-10 23:37:26",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.2,
+      "wifi_distance_m": 1.36,
+      "audio_snr": 26.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.36m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-648475",
+    "timestamp": "2026-10-10 23:37:28",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.3,
+      "wifi_distance_m": 1.37,
+      "audio_snr": 27.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.37m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-650875",
+    "timestamp": "2026-10-10 23:37:30",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.7,
+      "wifi_distance_m": 1.07,
+      "audio_snr": 27.8,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.07m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-652967",
+    "timestamp": "2026-10-10 23:37:32",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.6,
+      "wifi_distance_m": 1.06,
+      "audio_snr": 25.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.06m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-655954",
+    "timestamp": "2026-10-10 23:37:35",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.4,
+      "wifi_distance_m": 1.39,
+      "audio_snr": 28.1,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.39m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-657956",
+    "timestamp": "2026-10-10 23:37:37",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.8,
+      "wifi_distance_m": 1.08,
+      "audio_snr": 25.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.08m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-660973",
+    "timestamp": "2026-10-10 23:37:40",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.6,
+      "wifi_distance_m": 1.06,
+      "audio_snr": 25.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.06m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-663478",
+    "timestamp": "2026-10-10 23:37:43",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.0,
+      "wifi_distance_m": 1.34,
+      "audio_snr": 26.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.34m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-665953",
+    "timestamp": "2026-10-10 23:37:45",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.1,
+      "wifi_distance_m": 1.12,
+      "audio_snr": 27.1,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.12m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-667956",
+    "timestamp": "2026-10-10 23:37:47",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.4,
+      "wifi_distance_m": 1.26,
+      "audio_snr": 26.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.26m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-669961",
+    "timestamp": "2026-10-10 23:37:49",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.6,
+      "wifi_distance_m": 1.28,
+      "audio_snr": 26.1,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.28m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-672963",
+    "timestamp": "2026-10-10 23:37:52",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.4,
+      "wifi_distance_m": 1.38,
+      "audio_snr": 28.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.38m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-675968",
+    "timestamp": "2026-10-10 23:37:55",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.0,
+      "wifi_distance_m": 1.33,
+      "audio_snr": 22.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.33m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-677981",
+    "timestamp": "2026-10-10 23:37:57",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.14,
+      "audio_snr": 25.9,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.14m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-680957",
+    "timestamp": "2026-10-10 23:38:00",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.7,
+      "wifi_distance_m": 1.18,
+      "audio_snr": 24.6,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.18m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-682966",
+    "timestamp": "2026-10-10 23:38:02",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.3,
+      "wifi_distance_m": 1.25,
+      "audio_snr": 23.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.25m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-685961",
+    "timestamp": "2026-10-10 23:38:05",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.15,
+      "audio_snr": 25.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.15m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-688956",
+    "timestamp": "2026-10-10 23:38:08",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.5,
+      "wifi_distance_m": 1.05,
+      "audio_snr": 22.1,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.05m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-690960",
+    "timestamp": "2026-10-10 23:38:10",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.16,
+      "audio_snr": 26.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.16m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-692967",
+    "timestamp": "2026-10-10 23:38:12",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.2,
+      "wifi_distance_m": 1.12,
+      "audio_snr": 23.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.12m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-695959",
+    "timestamp": "2026-10-10 23:38:15",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.2,
+      "wifi_distance_m": 1.13,
+      "audio_snr": 26.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.13m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-697960",
+    "timestamp": "2026-10-10 23:38:17",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.6,
+      "wifi_distance_m": 1.28,
+      "audio_snr": 28.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.28m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-699966",
+    "timestamp": "2026-10-10 23:38:19",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.1,
+      "wifi_distance_m": 1.11,
+      "audio_snr": 27.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.11m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-701967",
+    "timestamp": "2026-10-10 23:38:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.4,
+      "wifi_distance_m": 1.38,
+      "audio_snr": 27.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.38m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-704955",
+    "timestamp": "2026-10-10 23:38:24",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.6,
+      "wifi_distance_m": 1.06,
+      "audio_snr": 26.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.06m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-707960",
+    "timestamp": "2026-10-10 23:38:27",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.0,
+      "wifi_distance_m": 1.1,
+      "audio_snr": 26.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.1m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-710965",
+    "timestamp": "2026-10-10 23:38:30",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.7,
+      "wifi_distance_m": 1.3,
+      "audio_snr": 24.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.3m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-713952",
+    "timestamp": "2026-10-10 23:38:33",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.14,
+      "audio_snr": 26.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.14m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-715968",
+    "timestamp": "2026-10-10 23:38:35",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.3,
+      "wifi_distance_m": 1.37,
+      "audio_snr": 24.6,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.37m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-718966",
+    "timestamp": "2026-10-10 23:38:38",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.5,
+      "wifi_distance_m": 1.16,
+      "audio_snr": 28.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.16m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-720967",
+    "timestamp": "2026-10-10 23:38:40",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.0,
+      "wifi_distance_m": 1.11,
+      "audio_snr": 23.8,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.11m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-723959",
+    "timestamp": "2026-10-10 23:38:43",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.9,
+      "wifi_distance_m": 1.09,
+      "audio_snr": 27.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.09m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-761962",
+    "timestamp": "2026-10-10 23:39:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.0,
+      "wifi_distance_m": 1.34,
+      "audio_snr": 28.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.34m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-821965",
+    "timestamp": "2026-10-10 23:40:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.2,
+      "wifi_distance_m": 1.35,
+      "audio_snr": 22.4,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.35m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-852391",
+    "timestamp": "2026-10-10 23:40:52",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.4,
+      "wifi_distance_m": 1.25,
+      "audio_snr": 28.1,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.25m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-852474",
+    "timestamp": "2026-10-10 23:40:52",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.14,
+      "audio_snr": 27.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.14m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-867240",
+    "timestamp": "2026-10-10 23:41:07",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.14,
+      "audio_snr": 24.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.14m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-881571",
+    "timestamp": "2026-10-10 23:41:21",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -42.7,
+      "wifi_distance_m": 1.29,
+      "audio_snr": 22.6,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.29m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-909472",
+    "timestamp": "2026-10-10 23:41:49",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.944,
+    "scores": {
+      "face_similarity": 0.93,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.7,
+      "wifi_distance_m": 1.07,
+      "audio_snr": 27.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.07m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-177973",
+    "timestamp": "2026-10-11 00:19:38",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.6,
+      "wifi_distance_m": 1.17,
+      "audio_snr": 28.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.17m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-213701",
+    "timestamp": "2026-10-11 00:20:13",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.7,
+      "wifi_distance_m": 1.07,
+      "audio_snr": 28.3,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.07m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-264240",
+    "timestamp": "2026-10-11 00:21:04",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.9,
+      "wifi_distance_m": 1.2,
+      "audio_snr": 26.0,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.2m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-264286",
+    "timestamp": "2026-10-11 00:21:04",
+    "decision": "DENIED_PRESENTATION_ATTACK",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.496,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.28,
+      "wifi_rssi": -88.0,
+      "wifi_distance_m": 12.0,
+      "audio_snr": 2.1,
+      "audio_token_valid": false
+    },
+    "reason": "Photo / screen spoofing detected for Dr. Ramesh Kumar. Failed biological liveness.",
+    "action_type": "ALARM"
+  },
+  {
+    "id": "EVT-264294",
+    "timestamp": "2026-10-11 00:21:04",
+    "decision": "DENIED_DEVICE_ABSENT",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.633,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -65.0,
+      "wifi_distance_m": 3.8,
+      "audio_snr": 6.5,
+      "audio_token_valid": false
+    },
+    "reason": "Face recognized (Dr. Ramesh Kumar), but registered mobile device is out of range (3.8m). Accidental walk-by or unauthenticated attempt.",
+    "action_type": "HOLD_LOCK"
+  },
+  {
+    "id": "EVT-264307",
+    "timestamp": "2026-10-11 00:21:04",
+    "decision": "DENIED_STOLEN_DEVICE",
+    "user_name": "Unregistered Intruder",
+    "user_id": "UNKNOWN",
+    "composite_score": 0.369,
+    "scores": {
+      "face_similarity": 0.22,
+      "face_liveness": 0.94,
+      "wifi_rssi": -99.0,
+      "wifi_distance_m": 99.0,
+      "audio_snr": 22.3,
+      "audio_token_valid": true
+    },
+    "reason": "Authorized smartphone (Dr. Ramesh Kumar's Ramesh_Pixel8) at door, but face is an unauthorized stranger!",
+    "action_type": "ALARM"
+  },
+  {
+    "id": "EVT-675347",
+    "timestamp": "2026-10-11 00:27:55",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.0,
+      "wifi_distance_m": 1.1,
+      "audio_snr": 27.7,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.1m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-742123",
+    "timestamp": "2026-10-11 01:02:22",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -41.1,
+      "wifi_distance_m": 1.11,
+      "audio_snr": 26.6,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.11m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-176383",
+    "timestamp": "2026-10-11 01:09:36",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -43.0,
+      "wifi_distance_m": 1.34,
+      "audio_snr": 26.8,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.34m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-476754",
+    "timestamp": "2026-10-11 01:14:36",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.9,
+      "wifi_distance_m": 1.09,
+      "audio_snr": 27.8,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.09m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-860580",
+    "timestamp": "2026-10-11 01:21:00",
+    "decision": "DENIED_PRESENTATION_ATTACK",
+    "user_name": "Siddhart",
+    "user_id": "USR-104",
+    "composite_score": 0.716,
+    "scores": {
+      "face_similarity": 0.99,
+      "face_liveness": 0.453,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 24.0,
+      "audio_token_valid": true
+    },
+    "reason": "Photo / screen spoofing detected for Siddhart. Failed biological liveness.",
+    "action_type": "ALARM"
+  },
+  {
+    "id": "EVT-884384",
+    "timestamp": "2026-10-11 01:21:24",
+    "decision": "DENIED_PRESENTATION_ATTACK",
+    "user_name": "Siddhart",
+    "user_id": "USR-104",
+    "composite_score": 0.716,
+    "scores": {
+      "face_similarity": 0.99,
+      "face_liveness": 0.415,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 25.0,
+      "audio_token_valid": true
+    },
+    "reason": "Photo / screen spoofing detected for Siddhart. Failed biological liveness.",
+    "action_type": "ALARM"
+  },
+  {
+    "id": "EVT-977990",
+    "timestamp": "2026-10-11 01:22:58",
+    "decision": "DENIED_PRESENTATION_ATTACK",
+    "user_name": "Siddhart",
+    "user_id": "USR-104",
+    "composite_score": 0.716,
+    "scores": {
+      "face_similarity": 0.99,
+      "face_liveness": 0.415,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 22.3,
+      "audio_token_valid": true
+    },
+    "reason": "Photo / screen spoofing detected for Siddhart. Failed biological liveness.",
+    "action_type": "ALARM"
+  },
+  {
+    "id": "EVT-284591",
+    "timestamp": "2026-10-11 01:28:04",
+    "decision": "DENIED_DEVICE_ABSENT",
+    "user_name": "Siddhart",
+    "user_id": "USR-104",
+    "composite_score": 0.716,
+    "scores": {
+      "face_similarity": 0.99,
+      "face_liveness": 0.802,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 26.5,
+      "audio_token_valid": true
+    },
+    "reason": "Face recognized (Siddhart), but registered mobile device is out of range (15.0m). Accidental walk-by or unauthenticated attempt.",
+    "action_type": "HOLD_LOCK"
+  },
+  {
+    "id": "EVT-338527",
+    "timestamp": "2026-10-11 01:28:58",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.825,
+      "wifi_rssi": -41.4,
+      "wifi_distance_m": 1.15,
+      "audio_snr": 27.2,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.15m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-411499",
+    "timestamp": "2026-10-11 01:30:11",
+    "decision": "DENIED_DEVICE_ABSENT",
+    "user_name": "chandra",
+    "user_id": "USR-106",
+    "composite_score": 0.716,
+    "scores": {
+      "face_similarity": 0.99,
+      "face_liveness": 0.807,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 25.9,
+      "audio_token_valid": true
+    },
+    "reason": "Face recognized (chandra), but registered mobile device is out of range (15.0m). Accidental walk-by or unauthenticated attempt.",
+    "action_type": "HOLD_LOCK"
+  },
+  {
+    "id": "EVT-750563",
+    "timestamp": "2026-10-11 09:22:30",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.94,
+      "wifi_rssi": -40.6,
+      "wifi_distance_m": 1.06,
+      "audio_snr": 23.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.06m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-782113",
+    "timestamp": "2026-10-11 09:23:02",
+    "decision": "DENIED_PRESENTATION_ATTACK",
+    "user_name": "Siddhart",
+    "user_id": "USR-104",
+    "composite_score": 0.716,
+    "scores": {
+      "face_similarity": 0.99,
+      "face_liveness": 0.397,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 26.7,
+      "audio_token_valid": true
+    },
+    "reason": "Photo / screen spoofing detected for Siddhart. Failed biological liveness (score: 39%).",
+    "action_type": "ALARM"
+  },
+  {
+    "id": "EVT-797831",
+    "timestamp": "2026-10-11 09:23:17",
+    "decision": "ACCESS_GRANTED",
+    "user_name": "Dr. Ramesh Kumar",
+    "user_id": "USR-101",
+    "composite_score": 0.948,
+    "scores": {
+      "face_similarity": 0.94,
+      "face_liveness": 0.595,
+      "wifi_rssi": -43.4,
+      "wifi_distance_m": 1.39,
+      "audio_snr": 25.5,
+      "audio_token_valid": true
+    },
+    "reason": "Verified identity of Dr. Ramesh Kumar with phone proximity (1.39m) and acoustic token.",
+    "action_type": "UNLOCK"
+  },
+  {
+    "id": "EVT-804874",
+    "timestamp": "2026-10-11 09:23:24",
+    "decision": "DENIED_DEVICE_ABSENT",
+    "user_name": "Siddhart",
+    "user_id": "USR-104",
+    "composite_score": 0.698,
+    "scores": {
+      "face_similarity": 0.951,
+      "face_liveness": 0.601,
+      "wifi_rssi": -95.0,
+      "wifi_distance_m": 15.0,
+      "audio_snr": 27.6,
+      "audio_token_valid": true
+    },
+    "reason": "Face recognized (Siddhart), but registered mobile device is out of range (15.0m). Accidental walk-by or unauthenticated attempt.",
+    "action_type": "HOLD_LOCK"
+  }
+]
