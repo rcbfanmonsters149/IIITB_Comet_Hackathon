@@ -81,6 +81,8 @@ class FusionEngine:
         # Default telemetry if no face is in view
         if not detected_faces:
             wifi_scan = self.wifi.scan_environment(self.current_scenario_override)
+            frame_w = frame.shape[1] if frame is not None else 640
+            frame_h = frame.shape[0] if frame is not None else 480
             return {
                 "decision": "IDLE_NO_FACE_DETECTED",
                 "reason": "No face detected in camera viewport. Please face the camera.",
@@ -95,6 +97,8 @@ class FusionEngine:
                         "liveness": 0.0,
                         "is_live": False,
                         "bbox": None,
+                        "frame_width": frame_w,
+                        "frame_height": frame_h,
                         "faces_count": 0
                     },
                     "wifi": {"scanned_devices": len(wifi_scan)},
@@ -196,9 +200,22 @@ class FusionEngine:
         }
 
         # Avoid redundant consecutive identical log entries within cooldown
-        if not self.audit_logs or (self.audit_logs[-1]["decision"] != decision) or ((now - self.last_decision_time) <= 0.1):
+        last_log = self.audit_logs[-1] if self.audit_logs else None
+        should_log = False
+        if last_log is None:
+            should_log = True
+        elif last_log.get("decision") != decision:
+            should_log = True
+        elif (now - float(last_log.get("epoch", 0))) >= 5.0:
+            should_log = True
+
+        if should_log:
+            log_entry["epoch"] = now
             self.audit_logs.append(log_entry)
             self._save_audit_logs()
+
+        frame_w = frame.shape[1] if frame is not None else 640
+        frame_h = frame.shape[0] if frame is not None else 480
 
         return {
             "decision": decision,
@@ -214,6 +231,8 @@ class FusionEngine:
                     "liveness": face_live,
                     "is_live": is_live,
                     "bbox": target.get("bbox"),
+                    "frame_width": frame_w,
+                    "frame_height": frame_h,
                     "faces_count": len(detected_faces),
                     "breakdown": target.get("liveness_breakdown")
                 },

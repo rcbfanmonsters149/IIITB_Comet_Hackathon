@@ -56,7 +56,64 @@ function drawAudioWave(isActive = false) {
 // Start idle wave on page load
 drawAudioWave(false);
 
-let recognitionInterval = null;
+let isProcessingFrame = false;
+let recognitionLoopTimeout = null;
+
+// Exact object-fit: cover coordinate transformation for face bounding box
+function updateFaceBoxPosition(cam) {
+  const faceBox = document.getElementById('face-box');
+  const cameraBox = document.getElementById('camera-box');
+  const videoElem = document.getElementById('camera-video');
+  if (!faceBox || !cameraBox) return;
+
+  if (!cam || !cam.bbox || cam.bbox.length < 4) {
+    return;
+  }
+
+  const [bx, by, bw, bh] = cam.bbox;
+
+  // Frame dimensions returned by deep vision engine or client video
+  let frameW = cam.frame_width;
+  let frameH = cam.frame_height;
+
+  if (!frameW || !frameH) {
+    if (videoElem && videoElem.videoWidth > 0 && videoElem.videoHeight > 0) {
+      frameW = videoElem.videoWidth;
+      frameH = videoElem.videoHeight;
+    } else {
+      frameW = 640;
+      frameH = 480;
+    }
+  }
+
+  const boxW = cameraBox.clientWidth;
+  const boxH = cameraBox.clientHeight;
+
+  if (boxW === 0 || boxH === 0 || frameW === 0 || frameH === 0) return;
+
+  // object-fit: cover computes the scaling factor that fills the container completely
+  const scale = Math.max(boxW / frameW, boxH / frameH);
+  const renderedW = frameW * scale;
+  const renderedH = frameH * scale;
+  const offsetX = (boxW - renderedW) / 2;
+  const offsetY = (boxH - renderedH) / 2;
+
+  // Transform face coordinates from video frame space to camera box viewport space
+  const cssX = offsetX + (bx * scale);
+  const cssY = offsetY + (by * scale);
+  const cssW = bw * scale;
+  const cssH = bh * scale;
+
+  // Keep securely within camera frame bounds
+  const clampedX = Math.max(2, Math.min(boxW - cssW - 2, cssX));
+  const clampedY = Math.max(2, Math.min(boxH - cssH - 2, cssY));
+
+  faceBox.style.left = `${Math.round(clampedX)}px`;
+  faceBox.style.top = `${Math.round(clampedY)}px`;
+  faceBox.style.width = `${Math.round(cssW)}px`;
+  faceBox.style.height = `${Math.round(cssH)}px`;
+  faceBox.style.display = 'block';
+}
 
 async function startRecognition() {
   if (isScanning) return;
@@ -77,10 +134,10 @@ async function startRecognition() {
 
   isScanning = true;
 
-  // Set scanning state
+  // Set scanning state - stays active for continuous live tracking
   btn.classList.add('scanning');
-  btnText.innerText = 'Recognizing Face...';
-  btnIcon.innerText = '⏳';
+  btnText.innerText = 'Tracking Face...';
+  btnIcon.innerText = '🟢';
 
   // Activate badges
   document.getElementById('vision-badge').className = 'feed-badge active';
@@ -96,12 +153,28 @@ async function startRecognition() {
   if (audioAnimationId) cancelAnimationFrame(audioAnimationId);
   drawAudioWave(true);
 
-  // Run immediate first recognition cycle
-  runRecognitionFrame();
+  // Start continuous recognition loop
+  runRecognitionLoop();
+}
 
-  // Run periodic recognition loop every 800ms while user stands before camera
-  if (recognitionInterval) clearInterval(recognitionInterval);
-  recognitionInterval = setInterval(runRecognitionFrame, 800);
+async function runRecognitionLoop() {
+  if (!isScanning) return;
+
+  if (!isProcessingFrame) {
+    isProcessingFrame = true;
+    try {
+      await runRecognitionFrame();
+    } catch (err) {
+      console.warn("Recognition cycle error:", err);
+    } finally {
+      isProcessingFrame = false;
+    }
+  }
+
+  // Smooth periodic tracking loop: 100ms interval between finished frame and next capture
+  if (isScanning) {
+    recognitionLoopTimeout = setTimeout(runRecognitionLoop, 100);
+  }
 }
 
 async function runRecognitionFrame() {
@@ -113,11 +186,14 @@ async function runRecognitionFrame() {
   if (videoElem && videoElem.videoWidth > 0 && !videoElem.paused && !videoElem.ended) {
     try {
       const snapCanvas = document.createElement('canvas');
-      snapCanvas.width = videoElem.videoWidth;
-      snapCanvas.height = videoElem.videoHeight;
+      // Normalize to 640px width preserving aspect ratio for high-speed low-latency deep inference
+      const targetW = Math.min(640, videoElem.videoWidth);
+      const targetH = Math.round(targetW * (videoElem.videoHeight / videoElem.videoWidth));
+      snapCanvas.width = targetW;
+      snapCanvas.height = targetH;
       const ctx = snapCanvas.getContext('2d');
-      ctx.drawImage(videoElem, 0, 0);
-      frameBase64 = snapCanvas.toDataURL('image/jpeg', 0.85);
+      ctx.drawImage(videoElem, 0, 0, targetW, targetH);
+      frameBase64 = snapCanvas.toDataURL('image/jpeg', 0.82);
     } catch (e) {
       console.warn("Canvas capture error:", e);
     }
@@ -147,6 +223,7 @@ async function openCamera() {
   const streamImg = document.getElementById('camera-stream');
   const placeholder = document.getElementById('camera-placeholder');
   const faceBox = document.getElementById('face-box');
+  const cameraBox = document.getElementById('camera-box');
   const banner = document.getElementById('status-banner');
 
   if (placeholder) placeholder.style.display = 'none';
@@ -158,7 +235,11 @@ async function openCamera() {
     try {
       console.log("[CAM] Requesting camera permission via getUserMedia...");
       webcamStream = await navigator.mediaDevices.getUserMedia({
-        video: true,
+        video: {
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+          facingMode: 'user'
+        },
         audio: false
       });
 
@@ -188,14 +269,23 @@ async function openCamera() {
     }
   }
 
-  // Show face bounding box overlay
-  if (faceBox) {
+  // Position initial face bounding box in center of viewport
+  if (faceBox && cameraBox) {
+    const boxW = cameraBox.clientWidth || 400;
+    const boxH = cameraBox.clientHeight || 300;
+    const initialW = Math.round(boxW * 0.45);
+    const initialH = Math.round(boxH * 0.58);
+    const initialX = Math.round((boxW - initialW) / 2);
+    const initialY = Math.round((boxH - initialH) / 2);
+
+    faceBox.style.left = `${initialX}px`;
+    faceBox.style.top = `${initialY}px`;
+    faceBox.style.width = `${initialW}px`;
+    faceBox.style.height = `${initialH}px`;
     faceBox.style.display = 'block';
-    faceBox.style.top = '18%';
-    faceBox.style.left = '25%';
-    faceBox.style.width = '50%';
-    faceBox.style.height = '62%';
-    document.getElementById('face-tag').innerText = 'Analyzing Face...';
+    faceBox.style.borderColor = '#22c55e';
+    faceBox.style.boxShadow = '0 0 16px rgba(34, 197, 94, 0.45)';
+    document.getElementById('face-tag').innerText = 'Detecting Face...';
   }
 
   return true;
@@ -203,9 +293,6 @@ async function openCamera() {
 
 function applyRecognitionResults(data, persona) {
   const banner = document.getElementById('status-banner');
-  const btn = document.getElementById('btn-recognize');
-  const btnText = document.getElementById('btn-text');
-  const btnIcon = document.getElementById('btn-icon');
   const faceBox = document.getElementById('face-box');
   const faceTag = document.getElementById('face-tag');
 
@@ -213,55 +300,66 @@ function applyRecognitionResults(data, persona) {
   const isGranted = (dec === 'ACCESS_GRANTED');
   const cam = data.components?.cam || {};
 
-  // Dynamically position face bounding box if YuNet detected real face coordinates
+  // Dynamically position face bounding box on exact face location
   if (cam.bbox && cam.bbox.length >= 4) {
-    const [bx, by, bw, bh] = cam.bbox;
-    const l = Math.max(0, Math.min(95, (bx / 640) * 100));
-    const t = Math.max(0, Math.min(95, (by / 480) * 100));
-    const w = Math.max(10, Math.min(100, (bw / 640) * 100));
-    const h = Math.max(10, Math.min(100, (bh / 480) * 100));
-    faceBox.style.left = `${l}%`;
-    faceBox.style.top = `${t}%`;
-    faceBox.style.width = `${w}%`;
-    faceBox.style.height = `${h}%`;
-    faceBox.style.display = 'block';
+    updateFaceBoxPosition(cam);
   }
 
-  // Update Main Result Banner
+  // Update Status Banner and Visual Colors
   if (dec === 'IDLE_NO_FACE_DETECTED') {
     banner.className = 'status-banner';
-    banner.innerText = '⚠️ No human face detected. Please position your face in front of the camera.';
-    faceBox.style.display = 'none';
+    banner.innerText = '⚠️ Position your face in front of the camera...';
+    if (faceBox) {
+      faceBox.style.borderColor = '#94a3b8';
+      faceBox.style.boxShadow = 'none';
+      faceTag.style.backgroundColor = '#64748b';
+      faceTag.innerText = 'Searching Face...';
+    }
   } else if (isGranted) {
     banner.className = 'status-banner granted';
     banner.innerText = `✅ ACCESS GRANTED: ${data.user_name} (Door Unlocked)`;
-    faceBox.style.borderColor = '#16a34a';
-    faceTag.style.backgroundColor = '#16a34a';
-    faceTag.innerText = `${data.user_name} (${Math.round((cam.similarity || 0.94) * 100)}%)`;
+    if (faceBox) {
+      faceBox.style.borderColor = '#16a34a';
+      faceBox.style.boxShadow = '0 0 16px rgba(22, 163, 74, 0.5)';
+      faceTag.style.backgroundColor = '#16a34a';
+      faceTag.innerText = `${data.user_name} (${Math.round((cam.similarity || 0.94) * 100)}%)`;
+    }
   } else if (dec.includes('PRESENTATION_ATTACK')) {
     banner.className = 'status-banner denied';
     banner.innerText = `❌ ACCESS DENIED: Presentation Attack Detected (Failed Biological Liveness)`;
-    faceBox.style.borderColor = '#dc2626';
-    faceTag.style.backgroundColor = '#dc2626';
-    faceTag.innerText = `SPOOF / PHOTO DETECTED`;
+    if (faceBox) {
+      faceBox.style.borderColor = '#dc2626';
+      faceBox.style.boxShadow = '0 0 16px rgba(220, 38, 38, 0.5)';
+      faceTag.style.backgroundColor = '#dc2626';
+      faceTag.innerText = `SPOOF / PHOTO DETECTED`;
+    }
   } else if (dec.includes('DEVICE_ABSENT')) {
     banner.className = 'status-banner denied';
     banner.innerText = `❌ ACCESS DENIED: Face Recognized (${data.user_name}), but Registered Phone is Out of Range`;
-    faceBox.style.borderColor = '#dc2626';
-    faceTag.style.backgroundColor = '#dc2626';
-    faceTag.innerText = `${data.user_name} (Phone Missing)`;
+    if (faceBox) {
+      faceBox.style.borderColor = '#dc2626';
+      faceBox.style.boxShadow = '0 0 16px rgba(220, 38, 38, 0.5)';
+      faceTag.style.backgroundColor = '#dc2626';
+      faceTag.innerText = `${data.user_name} (Phone Missing)`;
+    }
   } else if (dec.includes('STOLEN_DEVICE')) {
     banner.className = 'status-banner denied';
     banner.innerText = `❌ ACCESS DENIED: Authorized Phone Present, but Face is an Unauthorized Stranger!`;
-    faceBox.style.borderColor = '#dc2626';
-    faceTag.style.backgroundColor = '#dc2626';
-    faceTag.innerText = `UNREGISTERED STRANGER`;
+    if (faceBox) {
+      faceBox.style.borderColor = '#dc2626';
+      faceBox.style.boxShadow = '0 0 16px rgba(220, 38, 38, 0.5)';
+      faceTag.style.backgroundColor = '#dc2626';
+      faceTag.innerText = `UNREGISTERED STRANGER`;
+    }
   } else {
     banner.className = 'status-banner denied';
     banner.innerText = `❌ ACCESS DENIED: Unregistered Person (Not found in authorized database)`;
-    faceBox.style.borderColor = '#dc2626';
-    faceTag.style.backgroundColor = '#dc2626';
-    faceTag.innerText = `UNREGISTERED STRANGER`;
+    if (faceBox) {
+      faceBox.style.borderColor = '#dc2626';
+      faceBox.style.boxShadow = '0 0 16px rgba(220, 38, 38, 0.5)';
+      faceTag.style.backgroundColor = '#dc2626';
+      faceTag.innerText = `UNREGISTERED STRANGER`;
+    }
   }
 
   // 1. Vision Feed Metrics
@@ -302,11 +400,7 @@ function applyRecognitionResults(data, persona) {
   document.getElementById('acoustic-freq-bar').style.backgroundColor = hasAcoustic ? '#16a34a' : '#dc2626';
   document.getElementById('acoustic-snr-val').innerText = hasAcoustic ? '26.4 dB' : '4.2 dB (Attenuated)';
 
-  // Reset button state
-  btn.classList.remove('scanning');
-  btnText.innerText = 'Recognize Again';
-  btnIcon.innerText = '🔄';
-  isScanning = false;
+  // Continuous tracking remains active: we do NOT reset isScanning to false here!
 }
 
 function applyLocalPersonaResult(persona) {
@@ -347,6 +441,12 @@ function onPersonaChange() {
 }
 
 function stopRecognition() {
+  isScanning = false;
+  isProcessingFrame = false;
+  if (recognitionLoopTimeout) {
+    clearTimeout(recognitionLoopTimeout);
+    recognitionLoopTimeout = null;
+  }
   if (recognitionInterval) {
     clearInterval(recognitionInterval);
     recognitionInterval = null;
