@@ -92,6 +92,11 @@
           
           <form id="enroll-form" onsubmit="submitEnrollment(event)">
             <div class="form-group">
+              <label class="form-label">Personnel / User ID <small style="color:var(--text-muted); font-weight:normal;">(Auto-generated unique ID if blank)</small></label>
+              <input type="text" id="inp-uid" class="form-input" placeholder="e.g. USR-108 (Leave empty to auto-assign)">
+            </div>
+
+            <div class="form-group">
               <label class="form-label">Full Name *</label>
               <input type="text" id="inp-name" class="form-input" required placeholder="e.g. Dr. Rajesh Verma">
             </div>

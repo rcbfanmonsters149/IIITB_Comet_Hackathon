@@ -183,6 +183,7 @@ async def get_user_photo(user_id: str):
     return Response(content=jpeg.tobytes(), media_type="image/jpeg")
 
 class Base64EnrollRequest(BaseModel):
+    user_id: Optional[str] = None
     name: str
     role: str
     department: str
@@ -206,9 +207,8 @@ async def enroll_from_webcam(req: Base64EnrollRequest):
         if img is None:
             return JSONResponse(status_code=400, content={"error": "Invalid camera image."})
 
-        user_id = f"USR-{len(engine.vision.enrolled_users) + 101}"
-        success = engine.vision.enroll_user(
-            user_id=user_id,
+        success, assigned_id = engine.vision.enroll_user(
+            user_id=req.user_id,
             name=req.name,
             role=req.role,
             phone=req.phone,
@@ -219,7 +219,7 @@ async def enroll_from_webcam(req: Base64EnrollRequest):
         )
 
         if success:
-            return {"status": "SUCCESS", "user_id": user_id, "name": req.name}
+            return {"status": "SUCCESS", "user_id": assigned_id, "name": req.name}
         else:
             return JSONResponse(status_code=400, content={"error": "Could not detect human face in photo."})
     except Exception as e:
@@ -233,7 +233,8 @@ async def enroll_from_upload(
     access_tier: str = Form("Standard Access"),
     phone: str = Form("Personal Device"),
     mac: str = Form("AA:BB:CC:DD:EE:FF"),
-    photo: UploadFile = File(...)
+    photo: UploadFile = File(...),
+    user_id: Optional[str] = Form(None)
 ):
     """Enrolls a new authorized person via image file upload using YuNet and SFace."""
     import numpy as np
@@ -244,8 +245,7 @@ async def enroll_from_upload(
     if img is None:
         return JSONResponse(status_code=400, content={"error": "Failed to decode uploaded image file."})
 
-    user_id = f"USR-{len(engine.vision.enrolled_users) + 101}"
-    success = engine.vision.enroll_user(
+    success, assigned_id = engine.vision.enroll_user(
         user_id=user_id,
         name=name,
         role=role,
@@ -257,7 +257,7 @@ async def enroll_from_upload(
     )
 
     if success:
-        return {"status": "SUCCESS", "user_id": user_id, "name": name}
+        return {"status": "SUCCESS", "user_id": assigned_id, "name": name}
     else:
         return JSONResponse(status_code=400, content={"error": "Could not detect human face in uploaded photo."})
 

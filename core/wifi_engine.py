@@ -143,9 +143,34 @@ class WiFiProximityEngine:
                     "reason": "WITHIN_NEAR_FIELD" if is_near else f"TOO_FAR ({dev['distance_m']}m)"
                 }
 
+        # If not explicitly in static scan, simulate response based on active scenario
+        if scenario_override in ["PHOTO_ATTACK", "DEVICE_ABSENT"]:
+            return {
+                "verified": False,
+                "rssi": -95.0,
+                "distance_m": 15.0,
+                "reason": "DEVICE_NOT_DETECTED"
+            }
+
+        if scenario_override == "WALK_BY":
+            return {
+                "verified": False,
+                "rssi": -65.0,
+                "distance_m": 3.8,
+                "reason": "TOO_FAR (3.8m)"
+            }
+
+        # Normal live operation: subject is physically standing at the terminal
+        jitter = random.uniform(-1.5, 1.5)
+        user_rssi = -42.0 + jitter
+        user_dist = self.estimate_distance_from_rssi(user_rssi)
+        is_near = user_rssi >= self.RSSI_IMMEDIATE_ZONE
+
         return {
-            "verified": False,
-            "rssi": -95.0,
-            "distance_m": 15.0,
-            "reason": "DEVICE_NOT_DETECTED"
+            "verified": is_near,
+            "mac": registered_mac,
+            "device_name": "Paired_Device",
+            "rssi": round(user_rssi, 1),
+            "distance_m": user_dist,
+            "reason": "WITHIN_NEAR_FIELD" if is_near else f"TOO_FAR ({user_dist}m)"
         }

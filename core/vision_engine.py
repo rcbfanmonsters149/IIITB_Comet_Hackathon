@@ -119,10 +119,43 @@ class VisionEngine:
         }
         self.save_enrolled_users()
 
+    def generate_next_user_id(self) -> str:
+        """
+        Generates a guaranteed strictly unique user ID (e.g. USR-108) that never
+        collides with any existing user in the database or saved photos on disk.
+        """
+        import re
+        max_num = 100
+        for uid in self.enrolled_users.keys():
+            m = re.match(r"^USR-(\d+)$", str(uid).strip())
+            if m:
+                max_num = max(max_num, int(m.group(1)))
+
+        if os.path.exists(self.enrolled_dir):
+            for fname in os.listdir(self.enrolled_dir):
+                m = re.match(r"^USR-(\d+)\.(jpg|jpeg|png)$", fname, re.IGNORECASE)
+                if m:
+                    max_num = max(max_num, int(m.group(1)))
+
+        next_num = max_num + 1
+        candidate_id = f"USR-{next_num}"
+        while candidate_id in self.enrolled_users or os.path.exists(os.path.join(self.enrolled_dir, f"{candidate_id}.jpg")):
+            next_num += 1
+            candidate_id = f"USR-{next_num}"
+
+        return candidate_id
+
     def save_enrolled_users(self):
-        """Persists enrolled users to disk."""
-        with open(self.db_path, "w") as f:
-            json.dump(self.enrolled_users, f, indent=2)
+        """Safely and atomically persists enrolled users to disk."""
+        temp_path = f"{self.db_path}.tmp"
+        try:
+            with open(temp_path, "w", encoding="utf-8") as f:
+                json.dump(self.enrolled_users, f, indent=2)
+            os.replace(temp_path, self.db_path)
+        except Exception as e:
+            print(f"[CAM] Atomic save failed, falling back to direct write: {e}")
+            with open(self.db_path, "w", encoding="utf-8") as f:
+                json.dump(self.enrolled_users, f, indent=2)
 
     def detect_faces_deep(self, frame: np.ndarray) -> List[np.ndarray]:
         """
@@ -250,12 +283,17 @@ class VisionEngine:
             "breakdown": scores
         }
 
-    def enroll_user(self, user_id: str, name: str, role: str, phone: str, mac: str, face_img: np.ndarray, dept: str = "Research Lab", tier: str = "Standard Access") -> bool:
+    def enroll_user(self, user_id: Optional[str], name: str, role: str, phone: str, mac: str, face_img: np.ndarray, dept: str = "Research Lab", tier: str = "Standard Access", overwrite: bool = False) -> Tuple[bool, str]:
         """
         Enrolls a new user with their deep SFace neural embedding and saves face crop.
+        Returns (success: bool, final_user_id: str).
         """
         if face_img is None:
-            return False
+            return False, ""
+
+        # Guarantee unique user ID: if not specified or already exists without explicit overwrite
+        if not user_id or (user_id in self.enrolled_users and not overwrite):
+            user_id = self.generate_next_user_id()
 
         faces = self.detect_faces_deep(face_img)
         if not faces:
@@ -285,7 +323,7 @@ class VisionEngine:
             "enrolled_at": time.strftime("%Y-%m-%d %H:%M:%S")
         }
         self.save_enrolled_users()
-        return True
+        return True, user_id
 
     def process_frame(self, frame: np.ndarray, scenario_override: Optional[str] = None) -> Tuple[np.ndarray, List[dict]]:
         """
@@ -329,8 +367,8 @@ class VisionEngine:
                 if emb is not None:
                     sim = self.compute_similarity(query_emb, np.array(emb))
                 else:
-                    # Baseline demo match if no enrolled face exists yet
-                    sim = 0.94 if uid == "USR-101" else 0.35
+                    # Users without enrolled embeddings cannot match real live camera frames
+                    sim = 0.0
 
                 if sim > best_sim:
                     best_sim = sim

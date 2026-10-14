@@ -190,6 +190,7 @@ async function submitEnrollment(e) {
   }
 
   const payload = {
+    user_id: document.getElementById('inp-uid') ? document.getElementById('inp-uid').value.trim() : undefined,
     name: document.getElementById('inp-name').value.trim(),
     role: document.getElementById('inp-role').value.trim(),
     department: document.getElementById('inp-dept').value.trim(),
@@ -222,8 +223,9 @@ async function submitEnrollment(e) {
       document.getElementById('btn-snap-photo').style.display = 'none';
       document.getElementById('btn-retake-photo').style.display = 'none';
 
-      // Switch back to roster
+      // Switch back to roster & reload users immediately
       switchTab('roster', document.querySelectorAll('.nav-btn')[0]);
+      loadUsers();
     } else {
       alert(`Enrollment failed: ${data.error || 'Unknown error'}`);
     }
